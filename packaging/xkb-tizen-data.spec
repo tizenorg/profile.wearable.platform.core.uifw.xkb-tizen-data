@@ -1,5 +1,5 @@
 Name:          xkb-tizen-data
-Version:       0.0.1
+Version:       0.0.2
 Release:       0
 BuildArch:     noarch
 Summary:       Xkb data files
