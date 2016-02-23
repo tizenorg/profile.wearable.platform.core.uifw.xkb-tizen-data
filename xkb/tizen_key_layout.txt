@@ -6,17 +6,17 @@ XF86Home 139
 XF86Back 158
 XF86Camera_Full 212
 XF86Search 217
-XF86AudioPlay 200
-XF86AudioPlay 207 keyboard
-XF86AudioPause 201
-XF86AudioStop 166
-XF86AudioStop 128 keyboard
-XF86AudioNext 163
-XF86AudioPrev 165
-XF86AudioRewind 168
-XF86AudioForward 208
-XF86AudioMedia 226
-XF86AudioPlayPause 164
+XF86AudioPlay 200 no_priv
+XF86AudioPlay 207 keyboard no_priv
+XF86AudioPause 201 no_priv
+XF86AudioStop 166 no_priv
+XF86AudioStop 128 keyboard no_priv
+XF86AudioNext 163 no_priv
+XF86AudioPrev 165 no_priv
+XF86AudioRewind 168 no_priv
+XF86AudioForward 208 no_priv
+XF86AudioMedia 226 no_priv
+XF86AudioPlayPause 164 no_priv
 XF86AudioMute 113
 XF86AudioRecord 167
 Cancel 223 keyboard
