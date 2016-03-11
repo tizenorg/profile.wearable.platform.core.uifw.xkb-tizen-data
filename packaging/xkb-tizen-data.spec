@@ -8,6 +8,8 @@ License:       MIT
 Source0:       %{name}-%{version}.tar.gz
 Source1001:    %{name}.manifest
 
+%global TZ_SYS_RO_SHARE  %{?TZ_SYS_RO_SHARE:%TZ_SYS_RO_SHARE}%{!?TZ_SYS_RO_SHARE:/usr/share}
+
 %description
 Data files for Xkb keymap
 
@@ -25,8 +27,12 @@ make
 rm -rf %{buildroot}
 
 # install service
-%__mkdir_p %{buildroot}/usr/share/X11/xkb
-%__cp -f xkb/tizen_key_layout.txt %{buildroot}/usr/share/X11/xkb/tizen_key_layout.txt
+%__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/X11/xkb
+%__cp -f xkb/tizen_key_layout.txt %{buildroot}/%{TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt
+
+# for license notification
+mkdir -p %{buildroot}/%{TZ_SYS_RO_SHARE}/license
+cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/license/%{name}
 
 %pre
 
@@ -35,5 +41,5 @@ rm -rf %{buildroot}
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-%license COPYING
-/usr/share/X11/xkb/tizen_key_layout.txt
+%{TZ_SYS_RO_SHARE}/license/%{name}
+%{TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt
