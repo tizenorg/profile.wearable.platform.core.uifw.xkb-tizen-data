@@ -29,6 +29,7 @@ rm -rf %{buildroot}
 # install service
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/X11/xkb
 %__cp -f xkb/tizen_key_layout.txt %{buildroot}/%{TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt
+%__cp -f xkb/xkb.rule %{buildroot}/%{TZ_SYS_RO_SHARE}/X11/xkb/xkb.rule
 
 # for license notification
 mkdir -p %{buildroot}/%{TZ_SYS_RO_SHARE}/license
@@ -43,3 +44,4 @@ cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/licens
 %defattr(-,root,root,-)
 %{TZ_SYS_RO_SHARE}/license/%{name}
 %{TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt
+%{TZ_SYS_RO_SHARE}/X11/xkb/xkb.rule
